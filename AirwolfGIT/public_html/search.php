@@ -13,7 +13,7 @@ $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index
     $conn = odbc_connect($connection_string,$user,$pass);
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		 $id= $_REQUEST['searchTekst'];
-		 $query=("SELECT VareNavn FROM Vare WHERE VareNavn LIKE'$id'");
+		 $query=("SELECT VareNavn FROM Vare WHERE CONTAINS (Beskrivelse,'$id')");
 		$sql= odbc_exec($conn, $query);
 		 
 		 echo odbc_result($sql,1);

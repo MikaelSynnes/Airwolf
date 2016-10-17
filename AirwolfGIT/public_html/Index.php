@@ -75,15 +75,15 @@ while($myRow = odbc_fetch_array( $result )){
         <div id="product">
 	
             <a href="VNr1.html"><article>
-                   <img src="<?php echo$rows[0]['Img'];?> " width="175" height="200" " alt="Laptop"/>
+                   <img src="images/<?php echo$rows[0]['Img'];?> " width="175" height="200" " alt="Laptop"/>
                     <div id="Tekst"> 
 				<?php  echo $rows[0]['KortBeskrivelse'];  ?>
 					
 					</div>
                 </article></a>
             <a href="VNr2.html"><article>
-                    <<body>
-<img src="images/<?php echo$rows[1]['Img'];?>"  width="175" height="200">
+                   
+		<img src="images/<?php echo$rows[1]['Img'];?>"  width="175" height="200">
 
                     <div id="Tekst">
 					<div id="product">
@@ -108,7 +108,7 @@ while($myRow = odbc_fetch_array( $result )){
 						</article>
 					<a href="VNr3.html"><article>
 
-						 <img src="images/<?php echo$rows[2]['Img'];?>"  width="175" height="200">
+				 <img src="images/<?php echo$rows[2]['Img'];?>"  width="175" height="200">
 						<div id="Tekst">
 <?php  echo $rows[2]['KortBeskrivelse'];  ?>			
 </div>
