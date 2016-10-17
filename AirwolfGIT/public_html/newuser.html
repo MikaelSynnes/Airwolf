@@ -1,16 +1,69 @@
+<?php
+    //Use the machine name and instance if multiple instances are used
+    $server = '158.38.101.83';
+    $user = 'Synnes';
+    $pass = '4307';
+    //Define Port
+    $port='Port=1433';
+    $database = 'Airwolf';
+
+    $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
+    $conn = odbc_connect($connection_string,$user,$pass);
+    if ($conn) {
+        echo "Connection established.";
+    } else{
+        die("Connection could not be established.");
+    }
+
+ $sql = "SELECT KortBeskrivelse  FROM Vare" ;
+$print =odbc_exec($conn,$sql);
+
+
+ 
+ 
+
+?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+    <title>Airwolf - Ny bruker</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="CSS.CSS">
+    <header><div id="header"> Airwolf </div>   
+        <div id="login"> 
+            <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        </div>       
+    </header>
     <body>
-        <div>TODO write content</div>
+        <div class="signup">
+            <h1>Registrering</h1>
+            <form>
+            E-Post: <input type="text" name="e-post" value="" placeholder="E-Post"/><br>
+            Adresse: <input type="text" name="adresse" value="" placeholder="Adresse"/><br>
+            Postnummer: <input type="number" name="postnummer" min="4" max="6" value="" placeholder="Postnummer"/><br>
+            Telefon: <input type="number" name="telefon" min="8" max="12" placeholder="Telefon"><br>
+            Passord: <input type="password" name="passord" placeholder="Passord"><br><br>
+            Jeg er ikke en robot! <input type="checkbox"><br>
+            <input type="submit" value="Submit">
+            </form>
+            
     </body>
+    <footer>
+                <div class="push"></div>
+                <div class="container">
+                    <div class="footerFloater">
+                        © 2016 - Airwolf SB
+                    </div>
+
+                    <div class="footerFloater">
+                        <a href="" class="btn"> Contact </a>
+                        <a href="" class="btn">About</a>
+                        <a href="" class="btn">FAQ</a>
+                    </div>
+                </div>	
+    </footer>
+
+
 </html>
+
+
