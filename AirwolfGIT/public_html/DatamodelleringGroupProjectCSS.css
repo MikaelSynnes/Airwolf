@@ -39,8 +39,8 @@ h1{
 
 body{ 
     background-color:rgb(90,90,90);
-    margin-left:20%;
-    margin-right:20%;
+    margin-left:13%;
+    margin-right:13%;
     padding-right:0px;
     padding-top:0;
     padding-bottom:0%;
@@ -77,7 +77,7 @@ article{
 
 aside{
     float:left;
-    background:yellow;
+    background-color:rgb(180, 180, 180);
     width:20%;
     padding-right:40px;
 
@@ -162,4 +162,31 @@ h5{
     padding: 15px 10px;
     clear: both;
     display: block;
+}
+footer {
+    background-color:rgb(150, 150, 150);
+    padding: 25px;
+    height: 100%;
+}
+
+footer, .push {
+    height: 50px;
+    clear:both;
+    width:100%;
+    bottom:0;
+    position:fixed;
+}
+
+.footerFloater {
+    color: black;
+    float: left;
+    margin: 0 1.5%;
+    width:20%;
+}
+
+.btn {	
+    display: inline-block;
+    margin-right: 10px;	
+    color: black;
+    text-decoration: none;
 }
