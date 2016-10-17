@@ -1,3 +1,4 @@
+
 <?php
     //Use the machine name and instance if multiple instances are used
     $server = '158.38.101.83';
@@ -37,10 +38,10 @@ $print =odbc_exec($conn,$sql);
     <body>
         <div class="signup">
             <h1>Registrering</h1>
-            <form>
+            <form action="register.php" method="POST">
             E-Post: <input type="text" name="e-post" value="" placeholder="E-Post"/><br>
             Adresse: <input type="text" name="adresse" value="" placeholder="Adresse"/><br>
-            Postnummer: <input type="number" name="postnummer" min="4" max="6" value="" placeholder="Postnummer"/><br>
+            Postnummer: <input type="number" name="postnummer" value="" placeholder="Postnummer"/><br>
             Telefon: <input type="number" name="telefon" min="8" max="12" placeholder="Telefon"><br>
             Passord: <input type="password" name="passord" placeholder="Passord"><br><br>
             Jeg er ikke en robot! <input type="checkbox"><br>
