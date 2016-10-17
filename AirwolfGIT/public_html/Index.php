@@ -1,8 +1,8 @@
 <?php
     //Use the machine name and instance if multiple instances are used
     $server = '158.38.101.83';
-    $user = 'Synnes';
-    $pass = '4307';
+    $user = 'gjest';
+    $pass = '123';
     //Define Port
     $port='Port=1433';
     $database = 'Airwolf';
@@ -57,10 +57,11 @@ while($myRow = odbc_fetch_array( $result )){
     </header>
     <body>
         <div class="row">
-		<form action="search.php?searching=true" method="POST">
-            <div class="col-1"><input type="text" name="searchTekst" value="" placeholder="Search.."/><input type="submit" value="Søk"/></div>
+		<form action="search.php" method="POST">
+            <div class="col-1"><input type="text" name="searchTekst" placeholder="Search.."/><input type="submit" value="Søk"/></div></form>
             <div class="col-2"></div>
             <a href="handlekurv"><div class="col-3">Handlekurv</div></a>
+			
         </div>
    
         <aside>
@@ -86,15 +87,7 @@ while($myRow = odbc_fetch_array( $result )){
 	" alt="test"/></a>
                     <div id="Tekst">
 					<div id="product">
-<form id ="form3" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_cart" />
-<input type="hidden" name="add" value="1" />
-<input type="hidden" name="item_name" value="Window's Smart Watch" />
-<input type="hidden" name="amount" value="60" />
-<input type="hidden" name="currency_code" value="USD" />
-<input type="hidden" name="lc" value="US" />
-<input type="hidden" name="cancel_return" value="http://localhost/paypal-shopping-cart/index.php">
-<input type="hidden" name="return" value="Success.php">
+
 					
 			<?php  echo $rows[1]['KortBeskrivelse'];  ?>
 	<p>Quantity</p>
