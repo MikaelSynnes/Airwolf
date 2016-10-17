@@ -1,46 +1,46 @@
+@import url('https://fonts.google.com/specimen/Orbitron');
+
 * {
     box-sizing: border-box;
 }
 
 html{
-	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#000), to(#FFF));
-	font-family:"Georgia";
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#000), to(#FFF));
+    font-family:"Georgia";
 
 }
 
 header{
-   
-  
     text-align:left;
     background: -webkit-gradient(linear, 0 0, 0 bottom, from(#999), to(#000));
-	color: white;
-        
-       
-      }  
+    color: white;
+
+
+}  
 h1{
-  
-    
+
+
 }
 #header{
-   font-size:150px;
-   display:inline-block;
-   
- 
-    
+    font-size:150px;
+    display:inline-block;
+    font-family: "Orbitron";
+
+
 }
 
 #login{
-     
+
     font-size:40%;
     float:right;
     padding-top:120px;
-    
+
 }
 
 body{ 
-	background-color:rgb(90,90,90);
-	margin-left:20%;
-	margin-right:20%;
+    background-color:rgb(90,90,90);
+    margin-left:20%;
+    margin-right:20%;
     padding-right:0px;
     padding-top:0;
     padding-bottom:0%;
@@ -51,22 +51,22 @@ body{
 
 
 article{
-    
-    
-     <!--       -->
-     border-color:red;
-       border-style: solid;
+
+
+    <!--       -->
+    border-color:red;
+    border-style: solid;
     border-width: 5px;
     overflow:hidden;
-    
-  
-     
-     
-    
+
+
+
+
+
 }
 .input[type=text] {
     width: 130px;
-   -webkit-transition: width 0.4s ease-in-out;
+    -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
@@ -80,19 +80,19 @@ aside{
     background:yellow;
     width:20%;
     padding-right:40px;
-    
+
     padding-bottom:1018px;
-    
+
 }
 ul {
-   tekst-decoratin:none;
-   list-style-type:none; 
+    tekst-decoratin:none;
+    list-style-type:none; 
 }
 
 img{
-     float:left;
-     margin:1%;
- 
+    float:left;
+    margin:1%;
+
 }
 #Tekst{
     margin:4%;  
@@ -101,51 +101,50 @@ img{
 }
 li{
     border:1px solid black;
-    width:;
 }
 
 
 
 a{
-  text-decoration:none;
-  color:black;
+    text-decoration:none;
+    color:black;
 }
 
 section{
-	*background: rgba(0,0,0,0.7);
-	background:
-    linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    *background: rgba(0,0,0,0.7);
+    background:
+        linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+        linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+        linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+        linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+        linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+        linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
     background-color: #131313;
     background-size: 20px 20px;
-	
-            
+
+
     border: 50px solid rgb(0,0,0);
-    
-    
+
+
 }
 
 #nav li{
-	display:inlineblock;
-	margin: auto;
+    display:inlineblock;
+    margin: auto;
     float:left;
     background-color:rgb(150, 150, 150);
     border-right: 1px solid #bbb;
     font-size:20px;
-	list-style-type:none; 
-	padding:2% 4%;
-	text-align:center;
-	margin:auto;
+    list-style-type:none; 
+    padding:2% 4%;
+    text-align:center;
+    margin:auto;
 }
 
 h5{
-	font-size:50%;
-	padding-left:10%;
-	padding-right:10%;
+    font-size:50%;
+    padding-left:10%;
+    padding-right:10%;
 }
 
 .col-1{width: 33.33%;}
