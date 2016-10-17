@@ -49,7 +49,7 @@ while($myRow = odbc_fetch_array( $result )){
            	<form action="link" method="POST">
             <input type= "submit" Value="login"/>
                 </form>
-            <form action="link" method="POST">
+            <form action="newuser.html" method="POST">
                 <input type= "submit" value="Registrer deg"/>
             </form>
             
@@ -78,8 +78,7 @@ while($myRow = odbc_fetch_array( $result )){
                    <img src="images/<?php echo$rows[0]['Img'];?> " width="175" height="200" " alt="Laptop"/>
                     <div id="Tekst"> 
 				<?php  echo $rows[0]['KortBeskrivelse'];  ?>
-					<form action="addToCart.php" method"POST">
-						<input type="submit" value="legg til"/>
+					
 					</div>
                 </article></a>
             <a href="VNr2.html"><article>
