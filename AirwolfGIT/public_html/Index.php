@@ -77,7 +77,8 @@ while($myRow = odbc_fetch_array( $result )){
                    <img src="images/<?php echo$rows[0]['Img'];?>" width="175" height="200" " alt="Laptop"/>
                     <div id="Tekst"> 
 				<?php  echo $rows[0]['KortBeskrivelse'];  ?>
-					
+					<form action="addToCart.php" method"POST">
+						<input type="submit" value="legg til"/>
 					</div>
                 </article></a>
             <a href="VNr2.html"><article>
@@ -106,8 +107,7 @@ while($myRow = odbc_fetch_array( $result )){
 	</select>
 	</div>
 		</div>
-		<div id="add-cart"><a class="pro1" href="javascript:void(0);" onclick="document.getElementById('form1').submit()" id="cart-btn"><i class="fa fa-cart-plus"></i> Add to Cart </a></div>
-	<div id="view-cart"><a href="javascript:void(0);" onclick="document.getElementById('view-cart').submit()" id="cart-btn"><i class="fa fa-eye"></i> View Cart </a></div>
+		
 					
 					
 					</div>
