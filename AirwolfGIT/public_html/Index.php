@@ -1,8 +1,8 @@
 <?php
     //Use the machine name and instance if multiple instances are used
     $server = '158.38.101.83';
-    $user = 'gjest';
-    $pass = '123';
+    $user = 'Synnes';
+    $pass = '4307';
     //Define Port
     $port='Port=1433';
     $database = 'Airwolf';
@@ -57,11 +57,10 @@ while($myRow = odbc_fetch_array( $result )){
     </header>
     <body>
         <div class="row">
-		<form action="search.php" method="POST">
-            <div class="col-1"><input type="text" name="searchTekst" placeholder="Search.."/><input type="submit" value="Søk"/></div></form>
+		<form action="search.php?searching=true" method="POST">
+            <div class="col-1"><input type="text" name="searchTekst" value="" placeholder="Search.."/><input type="submit" value="Søk"/></div>
             <div class="col-2"></div>
             <a href="handlekurv"><div class="col-3">Handlekurv</div></a>
-			
         </div>
    
         <aside>
@@ -75,19 +74,26 @@ while($myRow = odbc_fetch_array( $result )){
         <div id="product">
 	
             <a href="VNr1.html"><article>
-                   <img src="images/<?php echo$rows[0]['Img'];?> " width="175" height="200" " alt="Laptop"/>
+                   <img src="images/<?php echo$rows[0]['Img'];?>" width="175" height="200" " alt="Laptop"/>
                     <div id="Tekst"> 
 				<?php  echo $rows[0]['KortBeskrivelse'];  ?>
 					
 					</div>
                 </article></a>
             <a href="VNr2.html"><article>
-                   
-		<img src="images/<?php echo$rows[1]['Img'];?>"  width="175" height="200">
-
+                    <<body>
+ <img src="images/<?php echo$rows[1]['Img'];?>"  width="175" height="200">
                     <div id="Tekst">
 					<div id="product">
-
+<form id ="form3" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_cart" />
+<input type="hidden" name="add" value="1" />
+<input type="hidden" name="item_name" value="Window's Smart Watch" />
+<input type="hidden" name="amount" value="60" />
+<input type="hidden" name="currency_code" value="USD" />
+<input type="hidden" name="lc" value="US" />
+<input type="hidden" name="cancel_return" value="http://localhost/paypal-shopping-cart/index.php">
+<input type="hidden" name="return" value="Success.php">
 					
 			<?php  echo $rows[1]['KortBeskrivelse'];  ?>
 	<p>Quantity</p>
@@ -107,7 +113,7 @@ while($myRow = odbc_fetch_array( $result )){
 						</article>
 					<a href="VNr3.html"><article>
 
-				 <img src="images/<?php echo$rows[2]['Img'];?>"  width="175" height="200">
+						  <img src="images/<?php echo$rows[1]['Img'];?>"  width="175" height="200">
 						<div id="Tekst">
 <?php  echo $rows[2]['KortBeskrivelse'];  ?>			
 </div>
@@ -135,3 +141,32 @@ while($myRow = odbc_fetch_array( $result )){
 </html>
 
 
+<?php
+session_start();
+
+
+
+ $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
+    $conn = odbc_connect($connection_string,$user,$pass);
+// get passed parameters
+$username=trim(stripslashes($_POST['username']));
+$password=trim(stripslashes($_POST['password']));
+
+$sql="SELECT * FROM Kunde WHERE brukernavn='$username' and passord='$password'";
+
+// prepare and execute in 1 statement
+$result=odbc_exec($conn,$stmt) 
+or die ("result error ".odbc_error().'-'.odbc_errormsg());
+
+// if no result: no rows read
+if (!odbc_fetch_row($result))
+die("Wrong Username or Password"); 
+
+// else: all is okay
+else { 
+$_SESSION['username']=$username;
+$_SESSION['password']=$password;
+header("location:/index.php");
+}
+odbc_close($conn);
+?>
