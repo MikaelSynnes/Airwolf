@@ -73,54 +73,54 @@ while($myRow = odbc_fetch_array( $result )){
             </ul>
         </aside>
         <div id="product">
-	
             <a href="VNr1.html"><article>
                    <img src="images/<?php echo$rows[0]['Img'];?>" width="175" height="200" " alt="Laptop"/>
                     <div id="Tekst"> 
-				<?php  echo $rows[0]['KortBeskrivelse'];  ?>
+				<h3>	<?php  echo $rows[0]['VareNavn'];  ?> </h3>
+				<?php  echo $rows[0]['KortBeskrivelse'];  ?> </div>
 					
 					</div>
                 </article></a>
-            <a href="VNr2.html"><article>
-                    <<body>
- <img src="images/<?php echo$rows[1]['Img'];?>"  width="175" height="200">
-                    <div id="Tekst">
-					<div id="product">
-<form id ="form3" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_cart" />
-<input type="hidden" name="add" value="1" />
-<input type="hidden" name="item_name" value="Window's Smart Watch" />
-<input type="hidden" name="amount" value="60" />
-<input type="hidden" name="currency_code" value="USD" />
-<input type="hidden" name="lc" value="US" />
-<input type="hidden" name="cancel_return" value="http://localhost/paypal-shopping-cart/index.php">
-<input type="hidden" name="return" value="Success.php">
-					
-			<?php  echo $rows[1]['KortBeskrivelse'];  ?>
-	<p>Quantity</p>
-	<select name="quantity">
-	<option value="1">1</option>
-	<option value="2">2</option>
-	<option value="3">3</option>
-	<option value="4">4</option>
-	<option value="5">5</option>
-	</select>
-	</div>
-		</div>
-		
-					
+        <div id="product">
+            <a href="VNr1.html"><article>
+                   <img src="images/<?php echo$rows[1]['Img'];?>" width="175" height="200" " alt="Laptop"/>
+                    <div id="Tekst"> 
+				<h3>	<?php  echo $rows[1]['VareNavn'];  ?> </h3>
+				<?php  echo $rows[1]['KortBeskrivelse'];  ?> </div>
 					
 					</div>
-						</article>
-					<a href="VNr3.html"><article>
-
-						  <img src="images/<?php echo$rows[1]['Img'];?>"  width="175" height="200">
-						<div id="Tekst">
-<?php  echo $rows[2]['KortBeskrivelse'];  ?>			
-</div>
-
-                </article></a><br>
-
+                </article></a>
+				        <div id="product">
+            <a href="VNr1.html"><article>
+                   <img src="images/<?php echo$rows[2]['Img'];?>" width="175" height="200" " alt="Laptop"/>
+                    <div id="Tekst"> 
+				<h3>	<?php  echo $rows[2]['VareNavn'];  ?> </h3>
+				<?php  echo $rows[2]['KortBeskrivelse'];  ?> </div>
+					
+					</div>
+                </article></a>
+				        <div id="product">
+            <a href="VNr1.html"><article>
+                   <img src="images/<?php echo$rows[3]['Img'];?>" width="175" height="200" " alt="Laptop"/>
+                    <div id="Tekst"> 
+				<h3>	<?php  echo $rows[3]['VareNavn'];  ?> </h3>
+				<?php  echo $rows[3]['KortBeskrivelse'];  ?> </div>
+					
+					</div>
+                </article></a>
+				        <div id="product">
+            <a href="VNr1.html"><article>
+                   <img src="images/<?php echo$rows[4]['Img'];?>" width="175" height="200" " alt="Laptop"/>
+                    <div id="Tekst"> 
+				<h3>	<?php  echo $rows[4]['VareNavn'];  ?> </h3>
+				<?php  echo $rows[4]['KortBeskrivelse'];  ?> </div>
+					
+					</div>
+                </article></a>
+				
+				
+				
+				
         </section>
     </body>
     <footer>
