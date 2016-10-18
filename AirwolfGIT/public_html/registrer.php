@@ -20,7 +20,8 @@ $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index
 		 $query="INSERT INTO Kunde(BrukerNr,Email,Adresse, PostNr, Tlf, passord)
 		 VALUES ((SELECT max(BrukerNr)+1 FROM Kunde),'$email','$Adresse','$PostNr','$Tlf','$Passord');" ;
 		$sql= odbc_exec($conn, $query);
-		 
+		header("Location: /Airwolf/AirwolfGIT/public_html/");
+                 exit;
 		
 	}	
 	
