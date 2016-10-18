@@ -17,11 +17,11 @@ $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index
 		 $PostNr=$_REQUEST['postnummer'];
 		 $Tlf=$_REQUEST['telefon'];
 		 $Passord=$_REQUEST['passord'];
-		 $query=("insert into Kunde(BrukerNr,Email,Adresse, PostNr, Tlf, passord)
-		 ((SELECT max(KundeNr)+1 FROM Kunde), '$email', '$Adresse', '$PostNr', '$Tlf', '$Passord' ") ;
+		 $query="INSERT INTO Kunde(BrukerNr,Email,Adresse, PostNr, Tlf, passord)
+		 VALUES ((SELECT max(BrukerNr)+1 FROM Kunde),'$email','$Adresse','$PostNr','$Tlf','$Passord');" ;
 		$sql= odbc_exec($conn, $query);
 		 
-		 echo odbc_result($sql,1);
-	
+		
+	}	
 	
 	?>
