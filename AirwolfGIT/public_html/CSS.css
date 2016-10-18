@@ -80,30 +80,31 @@ aside{
     background-color:rgb(180, 180, 180);
     width:20%;
     padding-right:40px;
-
     padding-bottom:1018px;
-
 }
+
 ul {
     tekst-decoratin:none;
     list-style-type:none; 
+    font-family: "Orbitron";
+    
 }
 
 img{
     float:left;
     margin:1%;
-
 }
+
 #Tekst{
     margin:4%;  
     color:white;
     tekst-align:left;
 }
+
 li{
-    border:1px solid black;
+    margin: 0 0 30px 0;
+    font-size: 30px;
 }
-
-
 
 a{
     text-decoration:none;
@@ -121,11 +122,7 @@ section{
         linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
     background-color: #131313;
     background-size: 20px 20px;
-
-
     border: 50px solid rgb(0,0,0);
-
-
 }
 
 #nav li{
