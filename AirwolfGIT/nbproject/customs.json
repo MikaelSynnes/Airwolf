@@ -1,6 +1,9 @@
 {
     "elements": {},
     "attributes": {
+        "border": {
+            "context": "input"
+        },
         "charset": {
             "context": "meta"
         }
