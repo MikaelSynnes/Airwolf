@@ -1,4 +1,5 @@
 <?php
+    session_start();
     //Use the machine name and instance if multiple instances are used
     $server = '158.38.101.83';
     $user = 'Synnes';
@@ -14,6 +15,7 @@
     } else{
         die("Connection could not be established.");
     }
+
 
  $sql = "SELECT KortBeskrivelse  FROM Vare" ;
 $print =odbc_exec($conn,$sql);
@@ -32,6 +34,9 @@ while($myRow = odbc_fetch_array( $result )){
 
 
  
+   if(isset($_SESSION['username'])){
+      echo "You are logged in as : {$_SESSION['username']}<p><a href=''>Logout</a></p>";
+    }
  
 
 ?>
@@ -47,7 +52,7 @@ while($myRow = odbc_fetch_array( $result )){
     <header><div id="header"> Airwolf </div>   
         <div id="login"> 
             <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-           	<form action="link" method="POST">
+           	<form action="login.html" method="POST">
             <input type= "submit" Value="login"/>
                 </form>
             <form action="newuser.html" method="POST">
@@ -141,33 +146,3 @@ while($myRow = odbc_fetch_array( $result )){
 
 </html>
 
-
-<?php
-session_start();
-
-
-
- $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
-    $conn = odbc_connect($connection_string,$user,$pass);
-// get passed parameters
-$username=trim(stripslashes($_POST['username']));
-$password=trim(stripslashes($_POST['password']));
-
-$sql="SELECT * FROM Kunde WHERE brukernavn='$username' and passord='$password'";
-
-// prepare and execute in 1 statement
-$result=odbc_exec($conn,$stmt) 
-or die ("result error ".odbc_error().'-'.odbc_errormsg());
-
-// if no result: no rows read
-if (!odbc_fetch_row($result))
-die("Wrong Username or Password"); 
-
-// else: all is okay
-else { 
-$_SESSION['username']=$username;
-$_SESSION['password']=$password;
-header("location:/index.php");
-}
-odbc_close($conn);
-?>

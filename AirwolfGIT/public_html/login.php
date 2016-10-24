@@ -21,11 +21,13 @@ $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index
 		$sql= odbc_exec($conn, $query);
 		 
 		 if(odbc_result($sql,1)){
-			 
 			 echo 'You are logged in!';
                         session_start();    
-                        $_SESSION['loggedin'] = true;
+                        $_SESSION['loggedIn'] = true;
                         $_SESSION['username'] = $username;
+                        header("Location: /Airwolf/AirwolfGIT/public_html/");
+                        
+                         exit;
 		 }
 		 else{
 			 echo "user not found";

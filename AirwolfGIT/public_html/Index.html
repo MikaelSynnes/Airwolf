@@ -1,4 +1,5 @@
 <?php
+session_start();
     //Use the machine name and instance if multiple instances are used
     $server = '158.38.101.83';
     $user = 'Synnes';
@@ -14,6 +15,7 @@
     } else{
         die("Connection could not be established.");
     }
+    
 
  $sql = "SELECT KortBeskrivelse  FROM Vare" ;
 $print =odbc_exec($conn,$sql);
@@ -47,7 +49,7 @@ while($myRow = odbc_fetch_array( $result )){
     <header><div id="header"> Airwolf </div>   
         <div id="login">
             <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-           	<form action="link" method="POST">
+           	<form action="login.html" method="POST">
             <input type= "submit" Value="login"/>
                 </form>
             <form action="link" method="POST">
