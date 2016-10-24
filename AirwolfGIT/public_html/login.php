@@ -9,16 +9,23 @@ $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index
 
     $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
     $conn = odbc_connect($connection_string,$user,$pass);
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	
+        $username=$_POST['Email']; 
+        $password=$_POST['passord']; 
+
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
-		 $id= 'bruke1r1';/*$_REQUEST['username'];*/
-		 $pw= 'pass1'; /*$_REQUEST['passord'];*/
-		 $query=("SELECT * FROM kunde WHERE brukernavn='$id'AND passord='$pw'");
+		 $username= $_REQUEST['Email'];
+		 $password= $_REQUEST['passord'];
+		 $query=("SELECT * FROM kunde WHERE Email='$username'AND passord='$password'");
 		$sql= odbc_exec($conn, $query);
 		 
-		 if(odbc_result($sql,1) !=null){
+		 if(odbc_result($sql,1)){
 			 
-			 echo 'Welcome to my server';
+			 echo 'You are logged in!';
+                        session_start();    
+                        $_SESSION['loggedin'] = true;
+                        $_SESSION['username'] = $username;
 		 }
 		 else{
 			 echo "user not found";
