@@ -35,7 +35,7 @@ while($myRow = odbc_fetch_array( $result )){
 
  
    if(isset($_SESSION['username'])){
-      echo "You are logged in as : {$_SESSION['username']}<p><a href=''>Logout</a></p>";
+      echo "You are logged in as : {$_SESSION['username']}<p><a href='logout.php'>Logout</a></p>"; 
     }
  
 

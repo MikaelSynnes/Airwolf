@@ -9,6 +9,13 @@ $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index
     $port='Port=1433';
     $database = 'Airwolf';
 
+session_start();
+if(isset($_SESSION['username'])){
+      echo "You are logged in as : {$_SESSION['username']}<p><a href='logout.php'>Logout</a></p>"; 
+    }
+   
+ 
+
     $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
     $conn = odbc_connect($connection_string,$user,$pass);
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -36,7 +43,7 @@ while($myRow = odbc_fetch_array( $result )){
     <link rel="stylesheet" type="text/css" href="Css.CSS">
     <header><div id="header"> Airwolf </div>   
         <div id="login"> 
-           	<form action="loginkriss.php" method="POST">
+           	<form action="login.php" method="POST">
             <input type= "submit" Value="login"/>
                 </form>
             <form action="newuser.html" method="POST">
