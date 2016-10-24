@@ -71,16 +71,34 @@ while($myRow = odbc_fetch_array( $result )){
 					</div>
                 </article></a>
             <a href="VNr2.html"><article>
-                    +<body>
+                  
  <img src="images/<?php echo$rows[1]['Img'];?>"  width="175" height="200">
                     <div id="Tekst">
 		
 			<?php  echo $rows[1]['KortBeskrivelse'];  ?>
 
 					</div>
-						</article>		
+						</article>
+           <a href="VNr2.html"><article>
+                  
+ <img src="images/<?php echo$rows[3]['Img'];?>"  width="175" height="200">
+                    <div id="Tekst">
+		
+			<?php  echo $rows[3]['KortBeskrivelse'];  ?>
+
+					</div>
+						</article>			
+           <a href="VNr2.html"><article>
+                  
+ <img src="images/<?php echo$rows[4]['Img'];?>"  width="175" height="200">
+                    <div id="Tekst">
+		
+			<?php  echo $rows[4]['KortBeskrivelse'];  ?>
+
+					</div>
+						</article>							
 </div>
-                </article></a><br>
+             
 
         </section>
     </body>
