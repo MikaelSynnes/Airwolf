@@ -48,19 +48,14 @@ echo "<br>";
 echo "<br>"; 
 }
 $anymatches=odbc_num_rows($result); 
-if ($anymatches == 0) 
+if ($anymatches <1) 
 { 
    echo "Nothing was found that matched your query.<br><br>"; 
 }
 
 </script>
-<form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
+<form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
 <input type="text" name="keyword">
 <input type="submit" name="search" value="Search">
 
-      //<img src="images/<?php echo $result_arr['Img']?>" width="175" height="200" " alt="Laptop"/>
-
-
-
-</body>
-</html>
+ 
