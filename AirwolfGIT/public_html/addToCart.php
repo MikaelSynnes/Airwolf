@@ -35,7 +35,7 @@ $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index
 			$antall=$_REQUEST['antall'];
 			$pris=$_REQUEST['Pris'];
 			$newOrdreLinje=("INSERT INTO OrdreLinje(OrdreNr, VareNr, PrisprEnhet, Antall)
-			VALUES('$ordreNr', ' $Vnr', '$antall', )"
+			VALUES('$ordreNr', ' $Vnr', '$antall', )");
 			$sqlLinje= odbc_exec($conn, $newOrdreLinje);
 		}
 	
@@ -47,7 +47,7 @@ $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index
 		 $vId= $_REQUEST['vareID'];
 		  $ordreNr= odbc_result($sql,1);
 		$removeItem=("DELETE FROM OrdreLinje
-		WHERE VNr='$vID' AND OrdreNr='$OrdreId'")
+		WHERE VNr='$vID' AND OrdreNr='$OrdreId'");
 		odbc_exec($conn, $removeItem);
 	
 	?>
