@@ -70,7 +70,7 @@ while($myRow = odbc_fetch_array( $result )){
         <div id="product">
             <a href="VNr1.html">
                 <article>
-                    <img src="img/<?php echo$rows[2]['Img'];?>" width="175" height="200" alt="Laptop"/>
+                    <img src="images/<?php echo$rows[2]['Img'];?>" width="175" height="200" alt="Laptop"/>
                     <div id="Tekst">
                         <?php  echo $rows[2]['KortBeskrivelse'];  ?>
                     </div>
