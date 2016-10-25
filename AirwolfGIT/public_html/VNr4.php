@@ -41,7 +41,7 @@ while($myRow = odbc_fetch_array( $result )){
                 Airwolf
             </div>
             <div id="login">
-                <form action="link" method="POST">
+                <form action="login.html" method="POST">
                     <input type= "submit" Value="login"/>
                 </form>
                 <form action="newuser.html" method="POST">
