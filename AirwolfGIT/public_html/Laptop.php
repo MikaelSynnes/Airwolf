@@ -78,52 +78,8 @@ while($myRow = odbc_fetch_array( $result )){
             </ul>
         </aside>
         <div id="product">
-            <a href="VNr1.html"><article>
-                   <img src="images/<?php echo$rows[0]['Img'];?>" width="175" height="200" " alt="Laptop"/>
-                    <div id="Tekst"> 
-				<h3>	<?php  echo $rows[0]['VareNavn'];  ?> </h3>
-				<?php  echo $rows[0]['KortBeskrivelse'];  ?> </div>
-					
-					</div>
-                </article></a>
-        <div id="product">
-            <a href="VNr1.html"><article>
-                   <img src="images/<?php echo$rows[1]['Img'];?>" width="175" height="200" " alt="Laptop"/>
-                    <div id="Tekst"> 
-				<h3>	<?php  echo $rows[1]['VareNavn'];  ?> </h3>
-				<?php  echo $rows[1]['KortBeskrivelse'];  ?> </div>
-					
-					</div>
-                </article></a>
-				        <div id="product">
-            <a href="VNr1.html"><article>
-                   <img src="images/<?php echo$rows[2]['Img'];?>" width="175" height="200" " alt="Laptop"/>
-                    <div id="Tekst"> 
-				<h3>	<?php  echo $rows[2]['VareNavn'];  ?> </h3>
-				<?php  echo $rows[2]['KortBeskrivelse'];  ?> </div>
-					
-					</div>
-                </article></a>
-				        <div id="product">
-            <a href="VNr1.html"><article>
-                   <img src="images/<?php echo$rows[3]['Img'];?>" width="175" height="200" " alt="Laptop"/>
-                    <div id="Tekst"> 
-				<h3>	<?php  echo $rows[3]['VareNavn'];  ?> </h3>
-				<?php  echo $rows[3]['KortBeskrivelse'];  ?> </div>
-					
-					</div>
-                </article></a>
-				        <div id="product">
-            <a href="VNr1.html"><article>
-                   <img src="images/<?php echo$rows[4]['Img'];?>" width="175" height="200" " alt="Laptop"/>
-                    <div id="Tekst"> 
-				<h3>	<?php  echo $rows[4]['VareNavn'];  ?> </h3>
-				<?php  echo $rows[4]['KortBeskrivelse'];  ?> </div>
-					
-					</div>
-                </article></a>
 				
-				
+            if (in_array($, TRUE))
 				
 				
         </section>
