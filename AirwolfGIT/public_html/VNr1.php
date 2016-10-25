@@ -1,4 +1,5 @@
 <?php
+     session_start();
     //Use the machine name and instance if multiple instances are used
     $server = '158.38.101.83';
     $user = 'Synnes';
@@ -20,7 +21,9 @@ $print =odbc_exec($conn,$sql);
 
 $product_array = "SELECT *  FROM Vare" ;
 $result =odbc_exec($conn,$product_array);
-
+ if(isset($_SESSION['username'])){
+      echo "You are logged in as : {$_SESSION['username']}<p><a href='logout.php'>Logout</a></p>"; 
+    }
 
 $rows = array();
 
