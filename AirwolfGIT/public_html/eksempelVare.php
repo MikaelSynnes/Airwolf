@@ -77,7 +77,7 @@ while($myRow = odbc_fetch_array( $result )){
                 </article>
             </a>
 
-            <?php  echo $rows[1]['KortBeskrivelse'];  ?>
+            <?php  echo $rows[1]['Beskrivelse'];  ?>
             <p>Quantity</p>
             <select name="quantity">
                 <option value="1">1</option>
@@ -86,6 +86,9 @@ while($myRow = odbc_fetch_array( $result )){
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
+            <form action="">
+                <input type="submit" value="Kjøp" />
+            </form>
 
         </div>
             <br>
