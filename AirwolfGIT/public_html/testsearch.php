@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Search Engine Test</title>
+
 </head>
 <body>
 <script language="php">
@@ -32,23 +33,24 @@ $keyword = trim ($_POST['keyword']);
 
 // Select statement
 $search = "SELECT * FROM Vare WHERE KortBeskrivelse LIKE '%$keyword%' OR VareNavn LIKE '%$keyword%'";
-$search2 = "SELECT Img FROM Vare";
+
 // Display
-$result2 = odbc_exec($conn, $search2);
+
 $result = odbc_exec($conn,$search) or die('query did not work');
 
 }
 
 while($result_arr = odbc_fetch_array( $result ))
 { 
-echo $result_arr['VareNavn']; 
-echo "<img src='images/" . $result_arr[Img] . "' alt='laptop' width='105' height='150'>";
+echo $result_arr['VareNavn'];
+echo "<br>";
+echo "<img src='images/" . $result_arr['Img'] . "' alt='laptop' width='105' height='150'>";
 echo " ";
 echo "<br>"; 
 echo "<br>"; 
 }
-$anymatches=odbc_num_rows($result); 
-if ($anymatches <1) 
+$anymatches = odbc_num_rows($result); 
+if ($anymatches < 0) 
 { 
    echo "Nothing was found that matched your query.<br><br>"; 
 }
