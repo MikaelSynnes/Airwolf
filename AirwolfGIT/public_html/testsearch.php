@@ -19,16 +19,11 @@
     </header>
     <body>
                 <div class="row">
-		<form action="testsearch.php" method="POST">
+		<form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
             <div class="col-1"><input type="text" name="searchTekst" value="" placeholder="Search.."/><input type="submit" value="Søk"/></div>
             <div class="col-2"></div>
             <a href="handlekurv"><div class="col-3">Handlekurv</div></a>
         </div>
-   
-<div id=test><form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
-<input type="text" name="keyword">
-<input type="submit" name="search" value="Search">
-</div>
 
 
         <aside>
