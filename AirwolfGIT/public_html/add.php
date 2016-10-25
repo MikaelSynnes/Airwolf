@@ -16,9 +16,17 @@
 			$Vnr= $_REQUEST['VNr'];
 			$antall=$_REQUEST['antall'];
 			$pris=$_REQUEST['pris'];
+                        $OrdreNr=1;
+                        $b = (int)$OrdreNr;
+                        $c=(int)$Vnr;
+                        $d=(int)$pris;
+
 			$newOrdreLinje=("INSERT INTO OrdreLinje(OrdreNr, VNr, PrisprEnhet, Antall)
-			VALUES('1','$Vnr','$pris','$antall')");
+			VALUES('$b','$c','$d','$antall')");
 			odbc_exec($conn, $newOrdreLinje);
+                        header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.html");
+                        
+                         exit;
 		}
 	
 	?>  

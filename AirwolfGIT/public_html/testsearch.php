@@ -2,10 +2,44 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Search Engine Test</title>
+<title>Airwolf - Søkeresultat</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Css.CSS">
+    <header><div id="header"> Airwolf </div>   
+        <div id="login"> 
+            <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+           	<form action="login.html" method="POST">
+            <input type= "submit" Value="login"/>
+                </form>
+            <form action="newuser.html" method="POST">
+                <input type= "submit" value="Registrer deg"/>
+            </form>
+            
+        </div>       
+    </header>
+    <body>
+                <div class="row">
+		<form action="testsearch.php" method="POST">
+            <div class="col-1"><input type="text" name="searchTekst" value="" placeholder="Search.."/><input type="submit" value="Søk"/></div>
+            <div class="col-2"></div>
+            <a href="handlekurv"><div class="col-3">Handlekurv</div></a>
+        </div>
+   
+<div id=test><form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+<input type="text" name="keyword">
+<input type="submit" name="search" value="Search">
+</div>
 
-</head>
-<body>
+
+        <aside>
+            <ul>
+                <li><a href="KatNr1"></a>
+                <li><a href="KatNr2">Laptop</a>
+                <li><a href="KatNr3">Stasjonær</a>
+               <li><a href="KatNr4">Utstyr</a>
+            </ul>
+        </aside>
+        
 <script language="php">
 
 $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index.php";
@@ -52,12 +86,10 @@ echo "<br>";
 $anymatches = odbc_num_rows($result); 
 if ($anymatches < 0) 
 { 
-   echo "Nothing was found that matched your query.<br><br>"; 
+   echo "Dette produktet ligger ikke inne.<br><br>"; 
 }
 
 </script>
-<form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
-<input type="text" name="keyword">
-<input type="submit" name="search" value="Search">
+</body>
+</html>
 
- 
