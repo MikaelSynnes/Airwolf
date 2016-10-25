@@ -32,7 +32,9 @@ $keyword = trim ($_POST['keyword']);
 
 // Select statement
 $search = "SELECT * FROM Vare WHERE KortBeskrivelse LIKE '%$keyword%' OR VareNavn LIKE '%$keyword%'";
+$search2 = "SELECT Img FROM Vare";
 // Display
+$result2 = odbc_exec($conn, $search2);
 $result = odbc_exec($conn,$search) or die('query did not work');
 
 }
@@ -40,6 +42,7 @@ $result = odbc_exec($conn,$search) or die('query did not work');
 while($result_arr = odbc_fetch_array( $result ))
 { 
 echo $result_arr['VareNavn']; 
+echo "<img src='images/" . $result_arr[Img] . "' alt='laptop' width='105' height='150'>";
 echo " ";
 echo "<br>"; 
 echo "<br>"; 
@@ -54,6 +57,10 @@ if ($anymatches == 0)
 <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
 <input type="text" name="keyword">
 <input type="submit" name="search" value="Search">
+
+      //<img src="images/<?php echo $result_arr['Img']?>" width="175" height="200" " alt="Laptop"/>
+
+
 
 </body>
 </html>
