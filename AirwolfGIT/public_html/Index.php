@@ -67,7 +67,7 @@ while($myRow = odbc_fetch_array( $result )){
 <form action="testsearch.php" method="POST">
             <div class="col-1"><input type="text" name="keyword" value="" placeholder="Search.."/><input type="submit" value="Søk"/></div>
             <div class="col-2"></div>
-            <a href="handlekurv"><div class="col-3">Handlekurv</div></a>
+            <a href="handlekurv.html"><div class="col-3">Handlekurv</div></a>
         </div>
    
         <aside>
@@ -78,7 +78,7 @@ while($myRow = odbc_fetch_array( $result )){
             </ul>
         </aside>
         <div id="product">
-            <a href="VNr1.html"><article>
+            <a href="VNr1.php"><article>
                    <img src="images/<?php echo$rows[0]['Img'];?>" width="175" height="200" " alt="Laptop"/>
                     <div id="Tekst"> 
 				<h3>	<?php  echo $rows[0]['VareNavn'];  ?> </h3>

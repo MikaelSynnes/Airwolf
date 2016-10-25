@@ -54,13 +54,13 @@ while($myRow = odbc_fetch_array( $result )){
         </header>
         <body>
         <div class="row">
-            <form action="search.php?searching=true" method="POST">
+            <form action="testsearch.php" method="POST">
                 <div class="col-1">
-                    <input type="text" name="searchTekst" value="" placeholder="Search.."/><input type="submit" value="Søk"/>
+                    <input type="text" name="keyword" value="" placeholder="Search.."/><input type="submit" value="Søk"/>
                 </div>
             </form>
             <div class="col-2"></div>
-                <a href="handlekurv"><div class="col-3">Handlekurv </div></a>
+                <a href="handlekurv.html"><div class="col-3">Handlekurv </div></a>
         </div>
         <aside>
             <ul>
