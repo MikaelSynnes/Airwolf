@@ -81,7 +81,9 @@ $p=3;
     $array1= odbc_fetch_array($query1);
     $verdi1=stripslashes($array['VNr']);
 
-
+            
+            //Sjekker om verdiene stemmer med brukeren, om de gjør det poster resultatet
+            // til handlekurven, og om du trykker på remove-knappen vil den fjerne ordrelinjen
              if($verdi == $ONr && $verdi1 == $vID){
             echo "<img src='images/" . $result_arr['Img'] . "' alt='laptop' width='100' height='150'>";
             echo "   ";
@@ -94,6 +96,7 @@ $p=3;
                 if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $removeItem=("DELETE FROM OrdreLinje WHERE OrdreNr='$ONr' AND VNr='$vID'");
 		odbc_exec($conn, $removeItem);
+                header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.php");
 	}
 echo "<br>";
             

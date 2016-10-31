@@ -37,6 +37,7 @@ while ($myRow = odbc_fetch_array($result)) {
 if (isset($_SESSION['username'])) {
     echo "You are logged in as : {$_SESSION['username']}<p><a href='logout.php'>Logout</a></p>";
 }
+echo "Ditt Ordrenr er : {$_SESSION['sesOrdre']}";
 ?>
 <!DOCTYPE html>
 <html>

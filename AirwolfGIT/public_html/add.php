@@ -28,7 +28,7 @@
 			$newOrdreLinje=("INSERT INTO Ordrelinje(OrdreNr, VNr, PrisprEnhet, Antall)
 			VALUES('$OrdreNr','$c','$d','$antall')");
 			odbc_exec($conn, $newOrdreLinje);
-                        header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.html");
+                        header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.php");
                         
                          
 		}
