@@ -13,7 +13,7 @@ echo "Ditt Ordrenr er : {$_SESSION['sesOrdre']}";
         <title>Airwolf - Handlekurv</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="Css.CSS">
-    <header><div id="header"> Airwolf </div> 
+    <header><div id="header"><a href="index.php"> Airwolf </a> </div> 
         <div id="login"> 
             <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
             <form action="login.html" method="POST">

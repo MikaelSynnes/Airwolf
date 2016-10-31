@@ -48,7 +48,7 @@ if (isset($_SESSION['username'])) {
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="Css.CSS">
 <header>
-    <a href="index.html">
+    <a href="index.php">
         <div id="header"> Airwolf </div>   
     </a>
     <div id="login"> 

@@ -39,10 +39,7 @@ while($myRow = odbc_fetch_array( $result )){
 <title>Group project datamodellering</title>
     <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="Css.CSS">
-        <header>
-            <div id="header">
-                Airwolf
-            </div>
+         <header><div id="header"><a href="index.php"> Airwolf </a> </div> 
             <div id="login">
                 <form action="login.html" method="POST">
                     <input type= "submit" Value="login"/>

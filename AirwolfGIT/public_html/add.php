@@ -16,7 +16,7 @@
 			$Vnr= $_REQUEST['VNr'];
 			$antall=$_REQUEST['antall'];
 			$pris=$_REQUEST['pris'];
-                        $OrdreNr= isset($_SESSION['sesOrdre']);
+                        $OrdreNr=($_SESSION['sesOrdre']);
                         $b = ((int)$OrdreNr);
                         $c=3;
                         $d=(int)$pris;
@@ -26,9 +26,9 @@
 
 
 			$newOrdreLinje=("INSERT INTO Ordrelinje(OrdreNr, VNr, PrisprEnhet, Antall)
-			VALUES('$p','$c','$d','$antall')");
+			VALUES('$OrdreNr','$c','$d','$antall')");
 			odbc_exec($conn, $newOrdreLinje);
-                        //header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.html");
+                        header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.html");
                         
                          
 		}

@@ -38,7 +38,7 @@ $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index
 		 $query=("SELECT max(OrdreNr)+1 FROM Ordre");
 		 $sqlO= odbc_exec($conn, $query);
                  $ordreNr= odbc_result($sqlO,1);
-                 $_SESSION['$ordreNr'] = $sesOrdre;      
+                 $_SESSION["sesOrdre"] = $ordreNr;
 		 
 		 
 		 $newOrdre=("INSERT INTO Ordre(OrdreNr, BrukerNr, OrdreDato, SendtDato)
