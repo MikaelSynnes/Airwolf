@@ -17,8 +17,9 @@
 			$antall=$_REQUEST['antall'];
 			$pris=$_REQUEST['pris'];
                         $OrdreNr= isset($_SESSION['sesOrdre']);
+                        $s=$OrdreNr;
                         $b = ((int)$OrdreNr);
-                        $c=3;
+                        $c=1;
                         $d=(int)$pris;
                         $b = ("SELECT max(OrdreNr)+1 FROM Ordre");
                         $sqlO= odbc_exec($conn, $b);
@@ -26,7 +27,7 @@
 
 
 			$newOrdreLinje=("INSERT INTO Ordrelinje(OrdreNr, VNr, PrisprEnhet, Antall)
-			VALUES('$p','$c','$d','$antall')");
+			VALUES('$b','$c','$d','$antall')");
 			odbc_exec($conn, $newOrdreLinje);
                         //header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.html");
                         
