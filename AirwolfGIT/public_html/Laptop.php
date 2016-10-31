@@ -76,20 +76,12 @@ while($myRow = odbc_fetch_array( $result )){
                 <li><a href="KatNr2">Stasjonær</a>
                <li><a href="KatNr3">Utstyr</a>
             </ul>
-        </aside> 
+        </aside>
         <div id="product">
-
-$query = "SELECT * FROM Vare";
-$result = mysql_query($query);
-
-while($row = mysql_fetch_assoc($result)){
-
-    foreach($row as $key => $val){
-   
-        echo $key . ": " . $val . "<BR />";
-    }
-}
-            
+				
+            if (in_array($, TRUE))
+				
+				
         </section>
     </body>
     <footer>
