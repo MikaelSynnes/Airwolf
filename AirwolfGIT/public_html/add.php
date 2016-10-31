@@ -1,6 +1,6 @@
 
 	<?php //Add item to cart
-        
+        session_start();
     $server = '158.38.101.83';
     $user = 'Synnes';
     $pass = '4307';
@@ -16,17 +16,21 @@
 			$Vnr= $_REQUEST['VNr'];
 			$antall=$_REQUEST['antall'];
 			$pris=$_REQUEST['pris'];
-                        $OrdreNr=1;
-                        $b = (int)$OrdreNr;
-                        $c=(int)$Vnr;
+                        $OrdreNr= isset($_SESSION['sesOrdre']);
+                        $b = ((int)$OrdreNr);
+                        $c=3;
                         $d=(int)$pris;
+                        $b = ("SELECT max(OrdreNr)+1 FROM Ordre");
+                        $sqlO= odbc_exec($conn, $b);
+                        $p= odbc_result($sqlO,1);
 
-			$newOrdreLinje=("INSERT INTO OrdreLinje(OrdreNr, VNr, PrisprEnhet, Antall)
-			VALUES('$b','$c','$d','$antall')");
+
+			$newOrdreLinje=("INSERT INTO Ordrelinje(OrdreNr, VNr, PrisprEnhet, Antall)
+			VALUES('$p','$c','$d','$antall')");
 			odbc_exec($conn, $newOrdreLinje);
-                        header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.html");
+                        //header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.html");
                         
-                         exit;
+                         
 		}
 	
 	?>  

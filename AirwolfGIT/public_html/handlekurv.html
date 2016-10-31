@@ -5,7 +5,8 @@
 <title>Airwolf - Handlekurv</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Css.CSS">
-    <header><div id="header"> Airwolf </div>   
+    <header><div id="header"> Airwolf </div> 
+        
         <div id="login"> 
             <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
            	<form action="login.html" method="POST">
@@ -20,9 +21,9 @@
 
         <div class="row">
 		
-            <div class="col-1"><input type="text" name="searchTekst" value="" placeholder="Search.."/><input type="submit" value="Søk"/></div>
+            <div class="col-1"><input type="text" name="keyword" value="" placeholder="Search.."/><input type="submit" value="Søk"/></div>
             <div class="col-2"></div>
-            <a href="handlekurv"><div class="col-3">Handlekurv</div></a>
+            <a href="handlekurv.html"><div class="col-3">Handlekurv</div></a>
         </div>
    
 
@@ -39,10 +40,10 @@
         </aside>
 <article>
            
-                     <form action="" method="POST"><div>
-                             <input type="submit" value="Remove"></div></article>
+                     <form action="" method="REMOVE">
+                             <input type="submit" value="Remove"></form></article>
 <?php 
-
+    session_start();
    $server = '158.38.101.83';
     $user = 'Synnes';
     $pass = '4307';
@@ -65,19 +66,20 @@
 			$newOrdreLinje=("INSERT INTO OrdreLinje(OrdreNr, VNr, PrisprEnhet, Antall)
 			VALUES('$b','$c','$d','$antall')");
 			odbc_exec($conn, $newOrdreLinje);
-                        header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.html");
+                      //  header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.html");
                         
-                         exit;
-                         
+                      //   exit;
+                         }
                          
                          if ($_SERVER["REQUEST_METHOD"] == "REMOVE") {
-		 $vId= $_REQUEST['vareID'];
+		 $vId= $_REQUEST['OrdreNr'];
 		  $ordreNr= odbc_result($sql,1);
 		$removeItem=("DELETE FROM OrdreLinje
 		WHERE VNr='$vID' AND OrdreNr='$OrdreId'");
 		odbc_exec($conn, $removeItem);
-	
+	}
 
+      
 ?>       
 
 
