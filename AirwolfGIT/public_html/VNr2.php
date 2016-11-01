@@ -68,7 +68,7 @@ while($myRow = odbc_fetch_array( $result )){
             </ul>
         </aside>
         <div id="product">
-            <a href="VNr1.html">
+            <a href="VNr2.php">
                 <article>
                     <img src="images/<?php echo$rows[1]['Img'];?>" width="175" height="200" alt="Laptop"/>
                     <div id="Tekst">
@@ -86,7 +86,7 @@ while($myRow = odbc_fetch_array( $result )){
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <form action="">
+            <form action="add.php" method="POST">
                 <input type="submit" value="Kjøp" />
             </form>
 
@@ -107,4 +107,4 @@ while($myRow = odbc_fetch_array( $result )){
             </div>
         </div>
     </footer>
-</html>|
+</html>
