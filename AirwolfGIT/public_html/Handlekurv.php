@@ -56,13 +56,9 @@ $result = odbc_exec($conn, $showcart);
 $vare = array();
 //echo "$vare";
 $p=3;
-//while ($vare = odbc_fetch_array($result)) {
-   // $vareInt = (int) $vare;
-   //$vare2= odbc_exec($conn, ("SELECT VNr FROM OrdreLinje WHERE OrdreNr='$ONr'"));
-    //$vare3= odbc_result($vare2,1);
+
     $result2 = odbc_exec($conn, ("SELECT * FROM Vare WHERE VNr='$p'"));
-   // $result2 = "SELECT * FROM Vare WHERE VNr='$p'";
-    //$result3= odbc_exec($conn, ("SELECT VNr FROM OrdreLinje WHERE OrdreNr='$ONr'"));
+   
     $result_arr = array();
     while ($result_arr = odbc_fetch_array($result2)) {
         ?> <article><?php
