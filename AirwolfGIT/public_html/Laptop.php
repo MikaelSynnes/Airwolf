@@ -72,7 +72,7 @@ while($myRow = odbc_fetch_array( $result )){
    
         <aside>
             <ul>
-                <li><a href="index.html">Laptop</a>
+                <li><a href="index.php">Laptop</a>
                 <li><a href="KatNr2">Stasjonær</a>
                <li><a href="KatNr3">Utstyr</a>
             </ul>
