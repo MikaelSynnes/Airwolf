@@ -1,4 +1,5 @@
 <?php
+     session_start();
     //Use the machine name and instance if multiple instances are used
     $server = '158.38.101.83';
     $user = 'Synnes';
@@ -20,7 +21,9 @@ $print =odbc_exec($conn,$sql);
 
 $product_array = "SELECT *  FROM Vare" ;
 $result =odbc_exec($conn,$product_array);
-
+ if(isset($_SESSION['username'])){
+      echo "You are logged in as : {$_SESSION['username']}<p><a href='logout.php'>Logout</a></p>"; 
+    }
 
 $rows = array();
 
@@ -36,10 +39,7 @@ while($myRow = odbc_fetch_array( $result )){
 <title>Group project datamodellering</title>
     <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="Css.CSS">
-        <header>
-            <div id="header">
-                Airwolf
-            </div>
+         <header><div id="header"><a href="index.php"> Airwolf </a> </div> 
             <div id="login">
                 <form action="login.html" method="POST">
                     <input type= "submit" Value="login"/>
@@ -51,7 +51,7 @@ while($myRow = odbc_fetch_array( $result )){
         </header>
         <body>
         <div class="row">
-            <form action=testsearch.php" method="POST">
+            <form action="testsearch.php" method="POST">
                 <div class="col-1">
                     <input type="text" name="keyword" value="" placeholder="Search.."/><input type="submit" value="Søk"/>
                 </div>
@@ -68,27 +68,38 @@ while($myRow = odbc_fetch_array( $result )){
             </ul>
         </aside>
         <div id="product">
-            <a href="VNr2.php">
-                <article>
+            <a href="VNr1.php">
+                <form action="add.php" method="POST">
                     <img src="images/<?php echo$rows[1]['Img'];?>" width="175" height="200" alt="Laptop"/>
                     <div id="Tekst">
                         <?php  echo $rows[1]['KortBeskrivelse'];  ?>
+                       <select name"vnr"><option value = <?php $rows[1]['VNr']?>></select>
                     </div>
                 </article>
             </a>
+            
+            
+               
 
             <?php  echo $rows[1]['Beskrivelse'];  ?>
+            <br>
+            <select name="pris"> <option value= <?php echo $rows[1]['Pris'];
+            ?>/></select>
+            <select name="vare"> <option value= <?php echo $rows[1]['VNr'];
+            ?>/></select>
+            <p><?php echo $rows[1]['Pris']?>kr</p>
+
             <p>Quantity</p>
-            <select name="quantity">
+            <select name="antall">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <form action="add.php" method="POST">
                 <input type="submit" value="Kjøp" />
             </form>
+
 
         </div>
             <br>
@@ -107,4 +118,4 @@ while($myRow = odbc_fetch_array( $result )){
             </div>
         </div>
     </footer>
-</html>
+</html>|
