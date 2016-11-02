@@ -51,6 +51,7 @@
     $port='Port=1433';
     $database = 'Airwolf';
 
+     
     $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
     $conn = odbc_connect($connection_string,$user,$pass);
     
@@ -79,6 +80,10 @@
 		odbc_exec($conn, $removeItem);
 	}
 
+        if(isset($_SESSION['username'])){
+      echo "You are logged in as : {$_SESSION['username']}<p><a href='logout.php'>Logout</a></p>"; 
+    }
+   
       
 ?>       
 

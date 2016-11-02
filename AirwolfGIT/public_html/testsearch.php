@@ -22,7 +22,7 @@
 		<form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
             <div class="col-1"><input type="text" name="keyword" value="" placeholder="Search.."/><input type="submit" value="Søk"/></div>
             <div class="col-2"></div>
-            <a href="handlekurv.html"><div class="col-3">Handlekurv</div></a>
+            <a href="handlekurv.php"><div class="col-3">Handlekurv</div></a>
         </div>
 
 
@@ -35,7 +35,7 @@
             </ul>
         </aside>
         
-<script language="php">
+<?php
 
 $my_url = "http://localhost:5000/AirwolfGIT/Airwolf/AirwolfGIT/public_html/index.php";
   $server = '158.38.101.83';
@@ -68,15 +68,24 @@ $search = "SELECT * FROM Vare WHERE KortBeskrivelse LIKE '%$keyword%' OR VareNav
 $result = odbc_exec($conn,$search) or die('query did not work');
 
 }
-
+?><section>
+            <?php
 while($result_arr = odbc_fetch_array( $result ))
 { 
+    ?>
+                <div id=product><article>
+   <a href="VNr<?php $nr =(int)$result_arr['VNr']; 
+    echo $nr?>.php"><p> <?php echo  $nr?> </p>
+   <?php
 echo $result_arr['VareNavn'];
 echo "<br>";
 echo "<img src='images/" . $result_arr['Img'] . "' alt='laptop' width='105' height='150'>";
 echo " ";
 echo "<br>"; 
 echo "<br>"; 
+?>
+</articler></div></a>
+<?php
 }
 $anymatches = odbc_num_rows($result); 
 if ($anymatches < 0) 
@@ -84,7 +93,7 @@ if ($anymatches < 0)
    echo "Dette produktet ligger ikke inne.<br><br>"; 
 }
 
-</script>
+?>
 </body>
 </html>
 

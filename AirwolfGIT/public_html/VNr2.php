@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 //Use the machine name and instance if multiple instances are used
 $server = '158.38.101.83';
 $user = 'Synnes';
@@ -6,6 +7,16 @@ $pass = '4307';
 //Define Port
 $port = 'Port=1433';
 $database = 'Airwolf';
+=======
+     session_start();
+    //Use the machine name and instance if multiple instances are used
+    $server = '158.38.101.83';
+    $user = 'Synnes';
+    $pass = '4307';
+    //Define Port
+    $port='Port=1433';
+    $database = 'Airwolf';
+>>>>>>> origin/master
 
 $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
 $conn = odbc_connect($connection_string, $user, $pass);
@@ -18,9 +29,17 @@ if ($conn) {
 $sql = "SELECT KortBeskrivelse  FROM Vare";
 $print = odbc_exec($conn, $sql);
 
+<<<<<<< HEAD
 $product_array = "SELECT *  FROM Vare";
 $result = odbc_exec($conn, $product_array);
 
+=======
+$product_array = "SELECT *  FROM Vare" ;
+$result =odbc_exec($conn,$product_array);
+ if(isset($_SESSION['username'])){
+      echo "You are logged in as : {$_SESSION['username']}<p><a href='logout.php'>Logout</a></p>"; 
+    }
+>>>>>>> origin/master
 
 $rows = array();
 
@@ -35,6 +54,7 @@ while ($myRow = odbc_fetch_array($result)) {
     <script src="js/jquery.min.js"></script>
     <title>Group project datamodellering</title>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="Css.CSS">
     <header>
         <a href="index.html">
@@ -52,8 +72,22 @@ while ($myRow = odbc_fetch_array($result)) {
         </div>
     </header>
     <body>
+=======
+        <link rel="stylesheet" type="text/css" href="Css.CSS">
+         <header><div id="header"><a href="index.php"> Airwolf </a> </div> 
+            <div id="login">
+                <form action="login.html" method="POST">
+                    <input type= "submit" Value="login"/>
+                </form>
+                <form action="newuser.html" method="POST">
+                    <input type= "submit" value="Registrer deg"/>
+                </form>
+            </div>
+        </header>
+        <body>
+>>>>>>> origin/master
         <div class="row">
-            <form action=testsearch.php" method="POST">
+            <form action="testsearch.php" method="POST">
                 <div class="col-1">
                     <input type="text" name="keyword" value="" placeholder="Search.."/><input type="submit" value="Søk"/>
                 </div>
@@ -70,27 +104,50 @@ while ($myRow = odbc_fetch_array($result)) {
             </ul>
         </aside>
         <div id="product">
+<<<<<<< HEAD
             <a href="VNr1.html">
                 <article>
                     <img src="images/<?php echo$rows[1]['Img']; ?>" width="175" height="200" alt="Laptop"/>
                     <div id="Tekst">
                         <?php echo $rows[1]['KortBeskrivelse']; ?>
+=======
+            <a href="VNr1.php">
+                <form action="add.php" method="POST">
+                    <img src="images/<?php echo$rows[1]['Img'];?>" width="175" height="200" alt="Laptop"/>
+                    <div id="Tekst">
+                        <?php  echo $rows[1]['KortBeskrivelse'];  ?>
+                       <select name"vnr"><option value = <?php $rows[1]['VNr']?>></select>
+>>>>>>> origin/master
                     </div>
                 </article>
             </a>
+            
+            
+               
 
+<<<<<<< HEAD
             <?php echo $rows[1]['Beskrivelse']; ?>
+=======
+            <?php  echo $rows[1]['Beskrivelse'];  ?>
+            <br>
+            <select name="pris"> <option value= <?php echo $rows[1]['Pris'];
+            ?>/></select>
+            <select name="vare"> <option value= <?php echo $rows[1]['VNr'];
+            ?>/></select>
+            <p><?php echo $rows[1]['Pris']?>kr</p>
+
+>>>>>>> origin/master
             <p>Quantity</p>
-            <select name="quantity">
+            <select name="antall">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <form action="">
                 <input type="submit" value="Kjøp" />
             </form>
+
 
         </div>
         <br>
