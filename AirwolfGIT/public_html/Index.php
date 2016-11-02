@@ -88,7 +88,7 @@ if (isset($_SESSION['username'])) {
                 </div>
             </article></a>
         <div id="product">
-            <a href="VNr1.html"><article>
+            <a href="VNr2.php"><article>
                     <img src="Images/<?php echo$rows[1]['Img']; ?>" width="175" height="200" alt="Laptop"/>
                     <div id="Tekst"> 
                         <h3>	<?php echo $rows[1]['VareNavn']; ?> </h3>
@@ -97,7 +97,7 @@ if (isset($_SESSION['username'])) {
                     </div>
                 </article></a>
             <div id="product">
-                <a href="VNr1.html"><article>
+                <a href="VNr3.php"><article>
                         <img src="Images/<?php echo$rows[2]['Img']; ?>" width="175" height="200" alt="Laptop"/>
                         <div id="Tekst"> 
                             <h3>	<?php echo $rows[2]['VareNavn']; ?> </h3>
@@ -106,7 +106,7 @@ if (isset($_SESSION['username'])) {
                         </div>
                     </article></a>
                 <div id="product">
-                    <a href="VNr1.html"><article>
+                    <a href="VNr4.php"><article>
                             <img src="Images/<?php echo$rows[3]['Img']; ?>" width="175" height="200" alt="Laptop"/>
                             <div id="Tekst"> 
                                 <h3>	<?php echo $rows[3]['VareNavn']; ?> </h3>
@@ -115,7 +115,7 @@ if (isset($_SESSION['username'])) {
                             </div>
                         </article></a>
                     <div id="product">
-                        <a href="VNr1.html"><article>
+                        <a href="VNr5.php"><article>
                                 <img src="Images/<?php echo$rows[4]['Img']; ?>" width="175" height="200" alt="Laptop"/>
                                 <div id="Tekst"> 
                                     <h3>	<?php echo $rows[4]['VareNavn']; ?> </h3>

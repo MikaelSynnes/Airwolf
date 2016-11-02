@@ -1,55 +1,57 @@
 <?php
-    //Use the machine name and instance if multiple instances are used
-    $server = '158.38.101.83';
-    $user = 'Synnes';
-    $pass = '4307';
-    //Define Port
-    $port='Port=1433';
-    $database = 'Airwolf';
+//Use the machine name and instance if multiple instances are used
+$server = '158.38.101.83';
+$user = 'Synnes';
+$pass = '4307';
+//Define Port
+$port = 'Port=1433';
+$database = 'Airwolf';
 
-    $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
-    $conn = odbc_connect($connection_string,$user,$pass);
-    if ($conn) {
-        echo "Connection established.";
-    } else{
-        die("Connection could not be established.");
-    }
+$connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
+$conn = odbc_connect($connection_string, $user, $pass);
+if ($conn) {
+    echo "Connection established.";
+} else {
+    die("Connection could not be established.");
+}
 
- $sql = "SELECT KortBeskrivelse  FROM Vare" ;
-$print =odbc_exec($conn,$sql);
+$sql = "SELECT KortBeskrivelse  FROM Vare";
+$print = odbc_exec($conn, $sql);
 
-$product_array = "SELECT *  FROM Vare" ;
-$result =odbc_exec($conn,$product_array);
+$product_array = "SELECT *  FROM Vare";
+$result = odbc_exec($conn, $product_array);
 
 
 $rows = array();
 
 
-while($myRow = odbc_fetch_array( $result )){
+while ($myRow = odbc_fetch_array($result)) {
     $rows[] = $myRow;
 }
 ?>
 
 <!DOCTYPE html>
 <html>
-<script src="js/jquery.min.js"></script>
-<title>Group project datamodellering</title>
+    <script src="js/jquery.min.js"></script>
+    <title>Group project datamodellering</title>
     <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="Css.CSS">
-        <header>
+    <link rel="stylesheet" type="text/css" href="Css.CSS">
+    <header>
+        <a href="index.html">
             <div id="header">
                 Airwolf
             </div>
-            <div id="login">
-                <form action="login.html" method="POST">
-                    <input type= "submit" Value="login"/>
-                </form>
-                <form action="newuser.html" method="POST">
-                    <input type= "submit" value="Registrer deg"/>
-                </form>
-            </div>
-        </header>
-        <body>
+        </a>
+        <div id="login">
+            <form action="login.html" method="POST">
+                <input type= "submit" Value="login"/>
+            </form>
+            <form action="newuser.html" method="POST">
+                <input type= "submit" value="Registrer deg"/>
+            </form>
+        </div>
+    </header>
+    <body>
         <div class="row">
             <form action="testsearch.php" method="POST">
                 <div class="col-1">
@@ -57,7 +59,7 @@ while($myRow = odbc_fetch_array( $result )){
                 </div>
             </form>
             <div class="col-2"></div>
-                <a href="handlekurv.html"><div class="col-3">Handlekurv </div></a>
+            <a href="handlekurv.html"><div class="col-3">Handlekurv </div></a>
         </div>
         <aside>
             <ul>
@@ -68,16 +70,16 @@ while($myRow = odbc_fetch_array( $result )){
             </ul>
         </aside>
         <div id="product">
-            <a href="VNr1.html">
+            <a href="VNr1.php">
                 <article>
-                    <img src="images/<?php echo$rows[3]['Img'];?>" width="175" height="200" alt="Laptop"/>
+                    <img src="images/<?php echo$rows[3]['Img']; ?>" width="175" height="200" alt="Laptop"/>
                     <div id="Tekst">
-                        <?php  echo $rows[3]['KortBeskrivelse'];  ?>
+                        <?php echo $rows[3]['KortBeskrivelse']; ?>
                     </div>
                 </article>
             </a>
 
-            <?php  echo $rows[3]['Beskrivelse'];  ?>
+            <?php echo $rows[3]['Beskrivelse']; ?>
             <p>Quantity</p>
             <select name="quantity">
                 <option value="1">1</option>
@@ -91,10 +93,10 @@ while($myRow = odbc_fetch_array( $result )){
             </form>
 
         </div>
-            <br>
-        </body>
+        <br>
+    </body>
     <footer>
-    <div class="push"></div>
+        <div class="push"></div>
         <div class="container">
             <div class="footerFloater">
                 © 2016 - Airwolf SB
