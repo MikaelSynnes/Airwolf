@@ -1,7 +1,7 @@
 
 	<?php //Add item to cart
         session_start();
-    $server = '158.38.101.83';
+    $server = '158.38.101.242';
     $user = 'Synnes';
     $pass = '4307';
     //Define Port

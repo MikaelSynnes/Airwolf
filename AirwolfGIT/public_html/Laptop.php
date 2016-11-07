@@ -1,7 +1,7 @@
 <?php
     session_start();
     //Use the machine name and instance if multiple instances are used
-    $server = '158.38.101.83';
+    $server = '158.38.101.242';
     $user = 'Synnes';
     $pass = '4307';
     //Define Port
