@@ -47,13 +47,14 @@ $database = 'Airwolf';
 $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
 $conn = odbc_connect($connection_string, $user, $pass);
 
-
+if (isset($_SESSION['username'])){
 $ONr = $_SESSION['sesOrdre'];
 $showcart = ("SELECT VNr FROM Ordrelinje WHERE OrdreNr='$ONr'");
 $result = odbc_exec($conn, $showcart);
 $vare = array();
+$pris=0;
 //echo "$vare";
-echo $ONr;
+
 $remove=false;
 
 
@@ -84,6 +85,8 @@ while ($result_arr = odbc_fetch_array($result)) {
                 echo $resultVare_arr['VareNavn'];
                 echo "   ";
                 echo $resultVare_arr['Pris'];
+                
+                $pris=$pris+ (int)$resultVare_arr['Pris'];
             } else
                 echo "Ingenting i handlekurv";
 
@@ -95,9 +98,13 @@ while ($result_arr = odbc_fetch_array($result)) {
                <form method="POST" action="">
             <input type="submit" value="Remove"></form></article>
     </article>
+    
             <?php
+            
         }
+        
 }
+echo  "Den totale prisen er  $pris ";
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
            
             $removeItem = ("DELETE FROM OrdreLinje WHERE OrdreNr='$ONr' AND VNr='$id'");
@@ -110,10 +117,17 @@ while ($result_arr = odbc_fetch_array($result)) {
         ?>
      
     <?php
+}
+
     echo "<br>";
 
     
 ?>       
+    <form method="POST"action="logout.php">
+    <input type=submit value="Gå til kasse">
+    </form>
+    
+    
 
 
 </body>

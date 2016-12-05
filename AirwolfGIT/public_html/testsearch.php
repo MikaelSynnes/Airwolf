@@ -5,11 +5,12 @@
 <title>Airwolf - Søkeresultat</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="CSS.css">
-    <header><div id="header"> Airwolf </div>   
+    <header><a href='index.php '<div id="header"> Airwolf </div>   </a>
         <div id="login"> 
          
            	<form action="login.html" method="POST">
             <input type= "submit" Value="login"/>
+            <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
                 </form>
             <form action="newuser.html" method="POST">
                 <input type= "submit" value="Registrer deg"/>
