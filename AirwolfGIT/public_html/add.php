@@ -11,7 +11,14 @@
     $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
     $conn = odbc_connect($connection_string,$user,$pass);
     
+              
+if(!isset($_SESSION['username'])) {
+    header("Location: /Airwolf/AirwolfGIT/public_html/newuser.html");
+die();
+}
+
     
+
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$Vnr= $_REQUEST['VNr'];
 			$antall=$_REQUEST['antall'];
@@ -36,5 +43,6 @@
                         
                          
 		
+
 	
 	?>  
