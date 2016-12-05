@@ -35,13 +35,12 @@ while ($myRow = odbc_fetch_array($result)) {
 
 <!DOCTYPE html>
 <html>
-    <script src="js/jquery.min.js"></script>
+   
     <title>Group project datamodellering</title>
     <meta charset="UTF-8">
-<<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="Css.CSS">
     <header>
-        <a href="index.html">
+        <a href="index.php">
             <div id="header">
                 Airwolf
             </div>
@@ -56,20 +55,6 @@ while ($myRow = odbc_fetch_array($result)) {
         </div>
     </header>
     <body>
-=======
-        <link rel="stylesheet" type="text/css" href="Css.CSS">
-         <header><div id="header"><a href="index.php"> Airwolf </a> </div> 
-            <div id="login">
-                <form action="login.html" method="POST">
-                    <input type= "submit" Value="login"/>
-                </form>
-                <form action="newuser.html" method="POST">
-                    <input type= "submit" value="Registrer deg"/>
-                </form>
-            </div>
-        </header>
-        <body>
->>>>>>> origin/master
         <div class="row">
             <form action="testsearch.php" method="POST">
                 <div class="col-1">
@@ -77,52 +62,35 @@ while ($myRow = odbc_fetch_array($result)) {
                 </div>
             </form>
             <div class="col-2"></div>
-            <a href="handlekurv.html"><div class="col-3">Handlekurv </div></a>
+            <a href="handlekurv.php"><div class="col-3">Handlekurv </div></a>
         </div>
         <aside>
             <ul>
-                <li><a href="index.html"></a>
+                <li><a href="index.php"></a>
                 <li><a href="KatNr2">Test</a>
                 <li><a href="KatNr3">Test</a>
                 <li><a href="KatNr4">Test</a>
             </ul>
         </aside>
         <div id="product">
-            <a href="VNr1.php">
+            <a href="VNr1.html">
                 <form action="add.php" method="POST">
                     <img src="images/<?php echo$rows[0]['Img']; ?>" width="175" height="200" alt="Laptop"/>
                     <div id="Tekst">
-<<<<<<< HEAD
                         <?php echo $rows[0]['KortBeskrivelse']; ?>
-=======
-                        <?php  echo $rows[0]['KortBeskrivelse'];  ?>
-                       <select name"vnr"><option value = <?php $rows[0]['VNr']?>></select>
->>>>>>> origin/master
                     </div>
                     </article>
             </a>
-<<<<<<< HEAD
             <select name="VNr"><option value=<?php echo$rows[0]['VNr'] ?>/>
             </select>
 
-=======
-            
-            
-               
->>>>>>> origin/master
 
 
             <?php echo $rows[1]['Beskrivelse']; ?>
             <br>
             <select name="pris"> <option value= <?php echo $rows[0]['Pris'];
             ?>/></select>
-<<<<<<< HEAD
             <p><?php echo $rows[0]['Pris'] ?>kr</p>
-=======
-            <select name="vare"> <option value= <?php echo $rows[0]['VNr'];
-            ?>/></select>
-            <p><?php echo $rows[0]['Pris']?>kr</p>
->>>>>>> origin/master
 
             <p>Quantity</p>
             <select name="antall">
@@ -135,18 +103,10 @@ while ($myRow = odbc_fetch_array($result)) {
             <input type="submit" value="Kjøp" />
         </form>
 
-<<<<<<< HEAD
     </div>
     <br>
 </body>
 <footer>
-=======
-
-        </div>
-            <br>
-        </body>
-    <footer>
->>>>>>> origin/master
     <div class="push"></div>
     <div class="container">
         <div class="footerFloater">

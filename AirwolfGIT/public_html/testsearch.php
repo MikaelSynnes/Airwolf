@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <title>Airwolf - Søkeresultat</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="Css.CSS">
+    <link rel="stylesheet" type="text/css" href="CSS.css">
     <header><div id="header"> Airwolf </div>   
         <div id="login"> 
-            <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+         
            	<form action="login.html" method="POST">
             <input type= "submit" Value="login"/>
                 </form>
@@ -75,16 +75,16 @@ while($result_arr = odbc_fetch_array( $result ))
     ?>
                 <div id=product><article>
    <a href="VNr<?php $nr =(int)$result_arr['VNr']; 
-    echo $nr?>.php"><p> <?php echo  $nr?> </p>
-   <?php
+    echo $nr?>.php"><p> <?php echo  $nr?> 
+      <?php
 echo $result_arr['VareNavn'];
 echo "<br>";
 echo "<img src='images/" . $result_arr['Img'] . "' alt='laptop' width='105' height='150'>";
 echo " ";
 echo "<br>"; 
 echo "<br>"; 
-?>
-</articler></div></a>
+?></p>
+</article></div></a>
 <?php
 }
 $anymatches = odbc_num_rows($result); 
@@ -94,6 +94,8 @@ if ($anymatches < 0)
 }
 
 ?>
+                        </section>
+                        
 </body>
 </html>
 

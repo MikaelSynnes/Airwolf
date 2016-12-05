@@ -8,7 +8,6 @@ $pass = '4307';
 $port = 'Port=1433';
 $database = 'Airwolf';
 
-
 $connection_string = "DRIVER={SQL Server};SERVER=$server;$port;DATABASE=$database";
 $conn = odbc_connect($connection_string, $user, $pass);
 if ($conn) {
@@ -36,13 +35,12 @@ while ($myRow = odbc_fetch_array($result)) {
 
 <!DOCTYPE html>
 <html>
-    <script src="js/jquery.min.js"></script>
+   
     <title>Group project datamodellering</title>
     <meta charset="UTF-8">
-    <<<<<<< HEAD
     <link rel="stylesheet" type="text/css" href="Css.CSS">
     <header>
-        <a href="index.html">
+        <a href="index.php">
             <div id="header">
                 Airwolf
             </div>
@@ -57,20 +55,6 @@ while ($myRow = odbc_fetch_array($result)) {
         </div>
     </header>
     <body>
-        =======
-        <link rel="stylesheet" type="text/css" href="Css.CSS">
-        <header><div id="header"><a href="index.php"> Airwolf </a> </div> 
-            <div id="login">
-                <form action="login.html" method="POST">
-                    <input type= "submit" Value="login"/>
-                </form>
-                <form action="newuser.html" method="POST">
-                    <input type= "submit" value="Registrer deg"/>
-                </form>
-            </div>
-        </header>
-    <body>
-        >>>>>>> origin/master
         <div class="row">
             <form action="testsearch.php" method="POST">
                 <div class="col-1">
@@ -78,66 +62,62 @@ while ($myRow = odbc_fetch_array($result)) {
                 </div>
             </form>
             <div class="col-2"></div>
-            <a href="handlekurv.html"><div class="col-3">Handlekurv </div></a>
+            <a href="handlekurv.php"><div class="col-3">Handlekurv </div></a>
         </div>
         <aside>
             <ul>
-                <li><a href="KatNr1"></a>
+                <li><a href="index.php"></a>
                 <li><a href="KatNr2">Test</a>
                 <li><a href="KatNr3">Test</a>
                 <li><a href="KatNr4">Test</a>
             </ul>
         </aside>
         <div id="product">
-            <<<<<<< HEAD
             <a href="VNr1.html">
-                <article>
+                <form action="add.php" method="POST">
                     <img src="images/<?php echo$rows[1]['Img']; ?>" width="175" height="200" alt="Laptop"/>
                     <div id="Tekst">
                         <?php echo $rows[1]['KortBeskrivelse']; ?>
-                        =======
-                        <a href="VNr1.php">
-                            <form action="add.php" method="POST">
-                                <img src="images/<?php echo$rows[1]['Img']; ?>" width="175" height="200" alt="Laptop"/>
-                                <div id="Tekst">
-                                    <?php echo $rows[1]['KortBeskrivelse']; ?>
-                                    <select name"vnr"><option value = <?php $rows[1]['VNr'] ?>></select>
-                                    >>>>>>> origin/master
-                                </div>
-                                </article>
-                        </a>
-
-
-
-
-                        >>>>>>> origin/master
-                        <p>Quantity</p>
-                        <select name="antall">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                        <input type="submit" value="Kjøp" />
-                        </form>
-
-
                     </div>
-                    <br>
-                    </body>
-                    <footer>
-                        <div class="push"></div>
-                        <div class="container">
-                            <div class="footerFloater">
-                                © 2016 - Airwolf SB
-                            </div>
+                    </article>
+            </a>
+            <select name="VNr"><option value=<?php echo$rows[1]['VNr'] ?>/>
+            </select>
 
-                            <div class="footerFloater">
-                                <a href="" class="btn"> Contact </a>
-                                <a href="" class="btn">About</a>
-                                <a href="" class="btn">FAQ</a>
-                            </div>
-                        </div>
-                    </footer>
-                    </html>|
+
+
+            <?php echo $rows[1]['Beskrivelse']; ?>
+            <br>
+            <select name="pris"> <option value= <?php echo $rows[1]['Pris'];
+            ?>/></select>
+            <p><?php echo $rows[1]['Pris'] ?>kr</p>
+
+            <p>Quantity</p>
+            <select name="antall">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <input type="submit" value="Kjøp" />
+        </form>
+
+    </div>
+    <br>
+</body>
+<footer>
+    <div class="push"></div>
+    <div class="container">
+        <div class="footerFloater">
+            © 2016 - Airwolf SB
+        </div>
+
+        <div class="footerFloater">
+            <a href="" class="btn"> Contact </a>
+            <a href="" class="btn">About</a>
+            <a href="" class="btn">FAQ</a>
+        </div>
+    </div>
+</footer>
+</html>|

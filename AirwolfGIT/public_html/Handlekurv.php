@@ -2,9 +2,8 @@
 session_start();
 if (isset($_SESSION['username'])) {
     echo "You are logged in as : {$_SESSION['username']}<p><a href='logout.php'>Logout</a></p>";
-echo "Ditt Ordrenr er : {$_SESSION['sesOrdre']}";
+    echo "Ditt Ordrenr er : {$_SESSION['sesOrdre']}";
 }
-
 ?>
 <!doctype html>
 <html>
@@ -27,7 +26,7 @@ echo "Ditt Ordrenr er : {$_SESSION['sesOrdre']}";
     <div class="row">
         <div class="col-1"><input type="text" name="keyword" value="" placeholder="Search.."/><input type="submit" value="Søk"/></div>
         <div class="col-2"></div>
-        <a href="handlekurv.html"><div class="col-3">Handlekurv</div></a>
+        <a href="handlekurv.php"><div class="col-3">Handlekurv</div></a>
     </div>
 </div>
 <aside>
@@ -39,7 +38,6 @@ echo "Ditt Ordrenr er : {$_SESSION['sesOrdre']}";
     </ul>
 </aside>
 <?php
-
 $server = '158.38.101.242';
 $user = 'Synnes';
 $pass = '4307';
@@ -55,63 +53,69 @@ $showcart = ("SELECT VNr FROM Ordrelinje WHERE OrdreNr='$ONr'");
 $result = odbc_exec($conn, $showcart);
 $vare = array();
 //echo "$vare";
-$p=3;
-
-    $result2 = odbc_exec($conn, ("SELECT * FROM Vare WHERE VNr='$p'"));
-   
-    $result_arr = array();
-    while ($result_arr = odbc_fetch_array($result2)) {
-        ?> <article><?php
-          //PUTT EN IF SETNING SOM SJEKKER OM DU HAR NOE I ORDRELINJEN HER ELSE "DU HAR INGENTING I HANDLEKURV"
-           $vID=$result_arr['VNr'];
-            $test = "SELECT * FROM OrdreLinje Where OrdreNr='$ONr'";
-            $test1 = "SELECT VNr FROM OrdreLinje";
-            
+echo $ONr;
+$remove=false;
 
 
-    $query = odbc_exec($conn, $test);
-    $array = odbc_fetch_array($query);
-    $verdi=stripslashes($array['OrdreNr']);
+while ($result_arr = odbc_fetch_array($result)) {
+    ?> <article><?php
+        //PUTT EN IF SETNING SOM SJEKKER OM DU HAR NOE I ORDRELINJEN HER ELSE "DU HAR INGENTING I HANDLEKURV"
+        $vID = (int) $result_arr['VNr'];
 
-    $query1 = odbc_exec($conn, $test1);
-    $array1= odbc_fetch_array($query1);
-    $verdi1=stripslashes($array['VNr']);
+        echo $vID;
 
-            
+        $test = "SELECT * FROM Vare Where VNr='$vID'";
+        $resultVare = odbc_exec($conn, $test);
+
+
+        while ($resultVare_arr = odbc_fetch_array($resultVare)) {
+
+
+
+
+
+
+
             //Sjekker om verdiene stemmer med brukeren, om de gjør det poster resultatet
             // til handlekurven, og om du trykker på remove-knappen vil den fjerne ordrelinjen
-             if($verdi == $ONr OR $verdi1 == $vID){
-            echo "<img src='images/" . $result_arr['Img'] . "' alt='laptop' width='100' height='150'>";
-            echo "   ";
-            echo $result_arr['VareNavn'];
-            echo "   ";
-            echo $result_arr['Pris'];
+            if ($vID != null) {
+                echo "<img src='images/" . $resultVare_arr['Img'] . "' alt='laptop' width='100' height='150'>";
+                echo "   ";
+                echo $resultVare_arr['VareNavn'];
+                echo "   ";
+                echo $resultVare_arr['Pris'];
+            } else
+                echo "Ingenting i handlekurv";
+
+            
+            if ($_SERVER["REQUEST_METHOD"] == "POST"){
+                 $id = (int) $resultVare_arr['VNr'];
             }
-            else echo "Ingenting i handlekurv";
-            
-                if($_SERVER["REQUEST_METHOD"] == "POST") {
-                $removeItem=("DELETE FROM OrdreLinje WHERE OrdreNr='$ONr' OR VNr='$vID'");
-		odbc_exec($conn, $removeItem);
-                header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.php");
-	}
-echo "<br>";
-            
-echo "<br>";
-     
-
-
-
             ?>
-            <form method="POST" action="">
-                <input type="submit" value="Remove"></form></article>
-        </article>
-        <?php
-
-        
+               <form method="POST" action="">
+            <input type="submit" value="Remove"></form></article>
+    </article>
+            <?php
+        }
+}
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+           
+            $removeItem = ("DELETE FROM OrdreLinje WHERE OrdreNr='$ONr' AND VNr='$id'");
+            odbc_exec($conn, $removeItem);
+            header("Location: /Airwolf/AirwolfGIT/public_html/handlekurv.php");
+        }
         echo "<br>";
-    }
-//}
+
+        echo "<br>";
+        ?>
+     
+    <?php
+    echo "<br>";
+
+    
 ?>       
+
+
 </body>
 </html>
 

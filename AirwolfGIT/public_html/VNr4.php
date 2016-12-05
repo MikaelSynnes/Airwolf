@@ -1,4 +1,5 @@
 <?php
+session_start();
 //Use the machine name and instance if multiple instances are used
 $server = '158.38.101.242';
 $user = 'Synnes';
@@ -20,7 +21,9 @@ $print = odbc_exec($conn, $sql);
 
 $product_array = "SELECT *  FROM Vare";
 $result = odbc_exec($conn, $product_array);
-
+if (isset($_SESSION['username'])) {
+    echo "You are logged in as : {$_SESSION['username']}<p><a href='logout.php'>Logout</a></p>";
+}
 
 $rows = array();
 
@@ -32,12 +35,12 @@ while ($myRow = odbc_fetch_array($result)) {
 
 <!DOCTYPE html>
 <html>
-    <script src="js/jquery.min.js"></script>
+   
     <title>Group project datamodellering</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Css.CSS">
     <header>
-        <a href="index.html">
+        <a href="index.php">
             <div id="header">
                 Airwolf
             </div>
@@ -59,54 +62,62 @@ while ($myRow = odbc_fetch_array($result)) {
                 </div>
             </form>
             <div class="col-2"></div>
-            <a href="handlekurv.html"><div class="col-3">Handlekurv </div></a>
+            <a href="handlekurv.php"><div class="col-3">Handlekurv </div></a>
         </div>
         <aside>
             <ul>
-                <li><a href="KatNr1"></a>
+                <li><a href="index.php"></a>
                 <li><a href="KatNr2">Test</a>
                 <li><a href="KatNr3">Test</a>
                 <li><a href="KatNr4">Test</a>
             </ul>
         </aside>
         <div id="product">
-            <a href="VNr1.php">
-                <article>
-                    <img src="images/<?php echo$rows[4]['Img']; ?>" width="175" height="200" alt="Laptop"/>
+            <a href="VNr1.html">
+                <form action="add.php" method="POST">
+                    <img src="images/<?php echo$rows[3]['Img']; ?>" width="175" height="200" alt="Laptop"/>
                     <div id="Tekst">
-                        <?php echo $rows[4]['KortBeskrivelse']; ?>
+                        <?php echo $rows[3]['KortBeskrivelse']; ?>
                     </div>
-                </article>
+                    </article>
             </a>
+            <select name="VNr"><option value=<?php echo$rows[3]['VNr'] ?>/>
+            </select>
 
-            <?php echo $rows[4]['Beskrivelse']; ?>
+
+
+            <?php echo $rows[3]['Beskrivelse']; ?>
+            <br>
+            <select name="pris"> <option value= <?php echo $rows[3]['Pris'];
+            ?>/></select>
+            <p><?php echo $rows[3]['Pris'] ?>kr</p>
+
             <p>Quantity</p>
-            <select name="quantity">
+            <select name="antall">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <form action="">
-                <input type="submit" value="Kjøp" />
-            </form>
+            <input type="submit" value="Kjøp" />
+        </form>
 
+    </div>
+    <br>
+</body>
+<footer>
+    <div class="push"></div>
+    <div class="container">
+        <div class="footerFloater">
+            © 2016 - Airwolf SB
         </div>
-        <br>
-    </body>
-    <footer>
-        <div class="push"></div>
-        <div class="container">
-            <div class="footerFloater">
-                © 2016 - Airwolf SB
-            </div>
 
-            <div class="footerFloater">
-                <a href="" class="btn"> Contact </a>
-                <a href="" class="btn">About</a>
-                <a href="" class="btn">FAQ</a>
-            </div>
+        <div class="footerFloater">
+            <a href="" class="btn"> Contact </a>
+            <a href="" class="btn">About</a>
+            <a href="" class="btn">FAQ</a>
         </div>
-    </footer>
+    </div>
+</footer>
 </html>|

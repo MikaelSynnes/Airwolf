@@ -165,6 +165,10 @@ footer {
     padding: 25px;
     height: 100%;
 }
+p{
+    
+    color:white;
+}
 
 footer, .push {
     height: 50px;
