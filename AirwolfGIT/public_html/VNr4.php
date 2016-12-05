@@ -66,10 +66,9 @@ while ($myRow = odbc_fetch_array($result)) {
         </div>
         <aside>
             <ul>
-                <li><a href="index.php"></a>
-                <li><a href="KatNr2">Test</a>
-                <li><a href="KatNr3">Test</a>
-                <li><a href="KatNr4">Test</a>
+              <li><a href="index.php">Laptop</a>
+                <li><a href="index.php">Stasjonær</a>
+                <li><a href="index.php">Utstyr</a>
             </ul>
         </aside>
         <div id="product">

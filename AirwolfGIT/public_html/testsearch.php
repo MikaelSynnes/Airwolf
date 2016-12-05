@@ -29,10 +29,9 @@
 
         <aside>
             <ul>
-                <li><a href="KatNr1"></a>
-                <li><a href="KatNr2">Laptop</a>
-                <li><a href="KatNr3">Stasjonær</a>
-               <li><a href="KatNr4">Utstyr</a>
+               <li><a href="index.php">Laptop</a>
+                <li><a href="index.php">Stasjonær</a>
+                <li><a href="index.php">Utstyr</a> 
             </ul>
         </aside>
         

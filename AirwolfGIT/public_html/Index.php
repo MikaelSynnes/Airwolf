@@ -77,8 +77,8 @@ if (isset($_SESSION['username'])) {
     <aside>
         <ul>
             <li><a href="index.php">Laptop</a>
-            <li><a href="KatNr2">Stasjonær</a>
-            <li><a href="KatNr3">Utstyr</a>
+            <li><a href="index.php">Stasjonær</a>
+            <li><a href="index.php">Utstyr</a>
         </ul>
     </aside>
     <div id="product">
